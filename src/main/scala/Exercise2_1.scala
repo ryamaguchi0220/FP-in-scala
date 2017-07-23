@@ -1,6 +1,6 @@
 package main.scala
 
-object exercise2_1 {
+object Exercise2_1 {
 
   def main(args: Array[String]): Unit = {
     println(fib(10))
