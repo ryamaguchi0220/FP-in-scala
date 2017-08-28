@@ -6,7 +6,7 @@ object Exercise2_3 {
     println(curry((a: Int, b: Int) => a + b).(5).(5))
   }
 
-  def curry[A,B,C](f: (A, B) => C): A => (B => C) == {
+  def curry[A,B,C](f: (A, B) => C): A => (B => C) = {
     (a: A) => f(a, _)
   }
 }
