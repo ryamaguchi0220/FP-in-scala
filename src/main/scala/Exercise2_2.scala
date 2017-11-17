@@ -11,6 +11,7 @@ object Exercise2_2 {
     println(isSorted(Array(1), (_: Int) == (_: Int)))
   }
 
+  // Saw hint
   def isSorted[A](as: Array[A], ordered: (A,A) => Boolean): Boolean = {
     @tailrec
     def loop(i: Int): Boolean = {

@@ -11,6 +11,7 @@ object Exercise3_4 {
     println(s"I expect that ${drop(List.empty[Int], 3)} is Nil")
   }
 
+  // Saw nothing
   def drop[A](list: List[A], num: Int): List[A] = {
     @tailrec
     def loop(l: List[A], n: Int): List[A] = {

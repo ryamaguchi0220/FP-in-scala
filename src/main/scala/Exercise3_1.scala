@@ -8,6 +8,7 @@ object Exercise3_1 {
     println(s"I expect that ${exercise3_1()} is 3")
   }
 
+  // Saw nothing
   def exercise3_1(): Int = {
     List(1, 2, 3, 4, 5) match {
       case ::(x, ::(2, ::(4, _))) => x

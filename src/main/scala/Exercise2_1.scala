@@ -6,6 +6,7 @@ object Exercise2_1 {
     println(fib(10))
   }
 
+  // Saw answer
   def fib(n: Int): Int = {
     def loop(n: Int): Int = {
       n match {

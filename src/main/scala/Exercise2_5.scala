@@ -6,6 +6,7 @@ object Exercise2_5 {
     println(compose((b: Int) => b * 10, (a: Int) => a + 10)(10))
   }
 
+  // Saw nothing
   def compose[A,B,C](f: B => C, g: A => B): A => C = {
     (a: A) => f(g(a))
   }
