@@ -16,7 +16,7 @@ object Exercise3_11 {
   }
 
   def product(as: List[Double]): Double = {
-    foldLeft(as, 0.0)(_ * _)
+    foldLeft(as, 1.0)(_ * _)
   }
 
   def length[A](as: List[A]): Int = {
