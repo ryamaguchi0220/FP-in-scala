@@ -1,6 +1,6 @@
 package main.scala
 
-object Exercise10_1 {
+object Exercise10_2 {
   trait Monoid[A] {
     def combine(a: A, b: A): A
     def empty: A
