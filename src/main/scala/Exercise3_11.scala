@@ -2,7 +2,6 @@ package main.scala
 
 import scala.collection.immutable.{::, List, Nil}
 
-// Saw nothing
 object Exercise3_11 {
   def foldLeft[A,B](as: List[A], z: B)(f: (B, A) => B): B = {
     as match {

@@ -1,5 +1,6 @@
 package main.scala
 
+// Saw hint
 object Exercise10_7 {
 
   trait Monoid[A] {

@@ -9,7 +9,6 @@ object Exercise3_2 {
     println(s"I expect that ${tail(List())} is Nil")
   }
 
-  // Saw nothing
   def tail[A](list: List[A]): List[A] = {
     list match {
       case Nil => Nil

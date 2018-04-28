@@ -2,7 +2,6 @@ package main.scala
 
 import scala.collection.immutable.{::, List, Nil}
 
-// Saw nothing
 object Exercise3_12 {
   def main(args: Array[String]): Unit = {
     println(s"I expect that ${reverse(List.empty)} is List()")

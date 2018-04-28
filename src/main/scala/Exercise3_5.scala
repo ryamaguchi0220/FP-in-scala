@@ -11,7 +11,6 @@ object Exercise3_5 {
     println(s"I expect that ${dropWhile(List.empty[Int], _ => true)} is Nil")
   }
 
-  // Saw nothing
   def dropWhile[A](list: List[A], f: A => Boolean): List[A] = {
     @tailrec
     def loop(l: List[A], f: A => Boolean): List[A] = {

@@ -1,6 +1,5 @@
 package main.scala
 
-// Saw nothing
 object Exercise3_19 {
   def filterViaFoldRight[A](as: List[A])(predicate: A => Boolean): List[A] = {.
     as.foldRight(List.empty[A])((a, acc) => if(predicate(a)) a :: acc else acc)

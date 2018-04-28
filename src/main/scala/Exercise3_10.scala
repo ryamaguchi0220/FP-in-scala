@@ -9,7 +9,6 @@ object Exercise3_10 {
     println(s"I expect that ${foldLeft(List(1, 2, 3), 100)(_ + _)} is 106")
   }
 
-  // Saw nothing
   def foldLeft[A,B](as: List[A], z: B)(f: (B, A) => B): B = {
     as match {
       case Nil => z
