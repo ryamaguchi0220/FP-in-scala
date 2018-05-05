@@ -17,7 +17,7 @@ object Exercise3_4 {
       (l, n) match {
         case (_, 0) => l
         case (Nil, _) => Nil
-        case (::(_, tail), n) => loop(tail, n - 1)
+        case (_ :: tail, n) => loop(tail, n - 1)
       }
     }
     loop(list, num)

@@ -16,7 +16,7 @@ object Exercise3_5 {
     def loop(l: List[A], f: A => Boolean): List[A] = {
       l match {
         case Nil => Nil
-        case ::(head, tail) => if(f(head)) loop(tail, f) else l
+        case head :: tail => if(f(head)) loop(tail, f) else l
       }
     }
     loop(list, f)
