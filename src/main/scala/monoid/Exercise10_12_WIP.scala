@@ -32,7 +32,7 @@ object Exercise10_12_WIP {
       }
     }
     override def concatenate[A](as: List[A])(m: Monoid[A]): A = {
-      as match {a
+      as match {
         case Nil => m.empty
         case head :: tail => m.combine(head, concatenate(tail)(m))
       }
