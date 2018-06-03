@@ -1,11 +1,10 @@
 package main.scala.laziness
 
-object Exercise5_3 {
+object Exercise5_4 {
   sealed trait Stream[+A] {
-    import Stream._
-    def takeWhile(p: A => Boolean): Stream[A] = this match {
-      case Cons(head, tail) if p(head()) =>  cons[A](head(), tail().takeWhile(p))
-      case Empty => this
+    def forAll(p: A => Boolean): Boolean = this match {
+      case Cons(head, tail) => p(head()) && tail().forAll(p)
+      case Empty => true
     }
   }
   case object Empty extends Stream[Nothing]

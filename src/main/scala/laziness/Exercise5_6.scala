@@ -1,12 +1,12 @@
 package main.scala.laziness
 
-object Exercise5_3 {
+object Exercise5_6 {
   sealed trait Stream[+A] {
-    import Stream._
-    def takeWhile(p: A => Boolean): Stream[A] = this match {
-      case Cons(head, tail) if p(head()) =>  cons[A](head(), tail().takeWhile(p))
-      case Empty => this
+    def foldRight[B](z: B)(f: (A, => B) => B): B = this match {
+      case Cons(head, tail) => f(head(), tail().foldRight(z)(f))
+      case Empty => z
     }
+    def headOptionViaFoldRight: Option[A] = this.foldRight[Option[A]](None)((a, _) => Some(a))
   }
   case object Empty extends Stream[Nothing]
   case class Cons[+A](head: () => A, tail: () => Stream[A]) extends Stream[A]
