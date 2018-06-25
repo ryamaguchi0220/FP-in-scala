@@ -38,15 +38,9 @@ object Exercise5_13 {
     }
     def empty[A]: Stream[A] = Empty
     def apply[A](as: A*): Stream[A] = if (as.isEmpty) empty else cons(as.head, apply(as.tail: _*))
-    def unfold[A, S](z: S)(f: S => Option[(A, S)]): Stream[A] = {
-      @annotation.tailrec
-      def loop(as: Stream[A], lz: S): Stream[A] = {
-        f(lz) match {
-          case Some((a, s)) => loop(cons(a, as), s)
-          case None => as
-        }
-      }
-      loop(empty, z)
+    def unfold[A, S](z: S)(f: S => Option[(A, S)]): Stream[A] = f(z) match {
+      case Some((h,s)) => cons(h, unfold(s)(f))
+      case None => empty
     }
   }
 }
