@@ -4,13 +4,6 @@ import scala.annotation.tailrec
 import scala.collection.immutable.{::, List, Nil}
 
 object Exercise3_4 {
-
-  def main(args: Array[String]): Unit = {
-    println(s"I expect that ${drop(List(1, 2, 3), 2)} is List(3)")
-    println(s"I expect that ${drop(List(1, 2, 3), 0)} is List(1, 2, 3)")
-    println(s"I expect that ${drop(List.empty[Int], 3)} is Nil")
-  }
-
   @tailrec
   def drop[A](list: List[A], num: Int): List[A] = {
     (list, num) match {
