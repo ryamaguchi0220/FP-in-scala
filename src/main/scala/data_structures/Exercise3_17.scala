@@ -1,10 +1,15 @@
 package main.scala.data_structures
 
-import Exercise3_16.mapViaFoldRight
-
 object Exercise3_17 {
-  def dsToStr(as: List[Double]): List[String] = {
-    mapViaFoldRight(as)(_.toString)
+  def dsToStr(doubles: List[Double]): List[String] = {
+    @annotation.tailrec
+    def loop(s: List[Double], accumulator: List[String]): List[String] = {
+      s match {
+        case head :: tail => loop(tail, head.toString :: accumulator)
+        case Nil => accumulator
+      }
+    }
+    loop(doubles, List.empty[String])
   }
 }
 

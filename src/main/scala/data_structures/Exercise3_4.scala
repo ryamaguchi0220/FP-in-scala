@@ -1,10 +1,9 @@
 package main.scala.data_structures
 
-import scala.annotation.tailrec
 import scala.collection.immutable.{::, List, Nil}
 
 object Exercise3_4 {
-  @tailrec
+  @annotation.tailrec
   def drop[A](list: List[A], num: Int): List[A] = {
     (list, num) match {
       case (Nil, _) => Nil

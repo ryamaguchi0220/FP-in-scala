@@ -1,11 +1,8 @@
 package main.scala.data_structures
 
-import scala.annotation.tailrec
-
 object Exercise3_24 {
-  // This looks like better than the official answer example, So prise me!
   def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean = {
-    @tailrec
+    @annotation.tailrec
     def loop(xs: List[A], ys: List[A]): Boolean = {
       (xs, ys) match {
         case (xHead :: xTail, yHead :: yTail) if (xHead == yHead) => loop(xTail, yTail)
