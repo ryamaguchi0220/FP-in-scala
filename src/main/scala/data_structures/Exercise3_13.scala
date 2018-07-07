@@ -7,7 +7,6 @@ object Exercise3_13 {
   def foldRightViaFoldLeft[A, B](as: List[A])(z: B)(f: (A, B) => B): B = {
     as.reverse.foldLeft(z)((b, a) => f(a, b))
   }
-  
   def foldLeftViaFoldRight[A, B](as: List[A])(z: B)(f: (B, A) => B): B = {
     as.reverse.foldRight(z)((a, b) => f(b, a))
   }
