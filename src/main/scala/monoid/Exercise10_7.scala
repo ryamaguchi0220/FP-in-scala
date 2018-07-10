@@ -1,13 +1,7 @@
 package main.scala.monoid
 
-// Saw hint
+// Saw the hint.
 object Exercise10_7 {
-
-  trait Monoid[A] {
-    def combine(a: A, b: A): A
-    def empty: A
-  }
-
   def foldMapV[A, B](as: IndexedSeq[A], m: Monoid[B])(f: A => B): B = {
     if (as.isEmpty) {
       m.empty

@@ -1,10 +1,6 @@
 package main.scala.monoid
 
 object Exercise10_15 {
-  trait Monoid[A] {
-    def combine(a: A, b: A): A
-    def empty: A
-  }
   def listMonoid[A] = new Monoid[List[A]] {
     def combine(a: List[A], b: List[A]): List[A] = {
       a match {
@@ -20,8 +16,8 @@ object Exercise10_15 {
     def foldLeft[A, B](as: F[A])(z: B)(f: (B, A) => B): B
     def foldMap[A, B](as: F[A])(f: A => B)(m: Monoid[B]): B
     def concatenate[A](as: F[A])(m: Monoid[A]): A
-    def toList[A](fa: F[A]): List[A] = foldMap[A, List[A]](fa)(List(_))(listMonoid[A])
-    def toList[A](fa: F[A]): List[A] = foldRight(fa)(List.empty[A])(_ :: _)
+    def toList1[A](fa: F[A]): List[A] = foldMap[A, List[A]](fa)(List(_))(listMonoid[A])
+    def toList2[A](fa: F[A]): List[A] = foldRight(fa)(List.empty[A])(_ :: _)
   }
 }
 

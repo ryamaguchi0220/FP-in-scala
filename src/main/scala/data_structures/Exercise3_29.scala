@@ -1,7 +1,7 @@
 package main.scala.data_structures
 
 object Exercise3_29 {
-  def fold[A,B](tree: Tree[A])(f: A => B)(ff: (B,B) => B): B = {
+  def fold[A, B](tree: Tree[A])(f: A => B)(ff: (B, B) => B): B = {
     tree match {
       case Leaf(x) => f(x)
       case Branch(left, right) => ff(fold(left)(f)(ff), fold(right)(f)(ff))

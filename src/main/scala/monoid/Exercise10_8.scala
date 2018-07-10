@@ -1,13 +1,7 @@
 package main.scala.monoid
 
-// Saw answer
+// Saw the answer.
 object Exercise10_8 {
-
-  trait Monoid[A] {
-    def combine(a: A, b: A): A
-    def empty: A
-  }
-
   sealed trait WC
   case class Stub(chars: String) extends WC
   case class Part(lStub: String, words: Int, rStub: String) extends WC
@@ -23,7 +17,6 @@ object Exercise10_8 {
           Part(l1, w1 + w2 + w3, r2)
       }
     }
-
     override def empty = Stub("")
   }
 }
