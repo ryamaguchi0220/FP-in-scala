@@ -11,4 +11,7 @@ object RNG {
       (f(random), nextRng)
     }
   }
+  def unit[A](a: A): Rand[A] = {
+    rng => (a, rng)
+  }
 }
