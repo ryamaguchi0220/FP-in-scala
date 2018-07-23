@@ -7,7 +7,7 @@ object Exercise6_10 {
       (f(a), nextS)
     }
     def map2[B, C](bs: State[B, S])(f: (A, B) => C): State[C, S] = State { s =>
-      val (a, s1) = this.run(s)
+      val (a, s1) = run(s)
       val (b, s2) = bs.run(s1)
       (f(a, b), s2)
     }
