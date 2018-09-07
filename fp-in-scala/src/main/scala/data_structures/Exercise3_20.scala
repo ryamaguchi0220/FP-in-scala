@@ -1,4 +1,4 @@
-package main.scala.data_structures
+package main.scala.data_str
 
 object Exercise3_20 {
   def flatMap[A, B](as: List[A])(f: A => List[B]): List[B] = {
