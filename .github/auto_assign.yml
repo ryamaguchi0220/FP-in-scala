@@ -1,6 +1,15 @@
+<<<<<<< devdaaa
 # Configuration for auto-assign - https://github.com/kentaro-m/auto-assign
 
 addReviewers: true
 numberOfReviewers: 0 # will add all reviewers
 reviewers:
   - ryamaguchi0220
+=======
+# Set to true to add assignees to pull requests
+addAssignees: true
+
+# A list of keywords to be skipped the process that add reviewers if pull requests include it 
+skipKeywords:
+  - wip
+>>>>>>> master
